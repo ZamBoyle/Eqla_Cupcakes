@@ -18,7 +18,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="{{ url('/') }}">
-            <img class="d-inline-block align-top" width="30" height="30" src="./Images/logo.png" aria-label="Logo compagnie" /> Crazy Cupcakes
+            <img class="d-inline-block align-top" width="30" height="30" src="{{ asset('Images/logo.png') }}" aria-label="Logo compagnie" /> Crazy Cupcakes
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContenu" aria-controls="navbarContenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -29,13 +29,13 @@
                         Accueil {!! Request::is('/') ? '<span class="sr-only">(courant)</span>' : '' !!}</a>
                 </li>
                 <li class="nav-item {{ Request::is('products') ? 'active' : '' }}"><a class='nav-link' href="{{ url('products') }}">
-                        Cupcakes {!! Request::is('/products') ? '<span class="sr-only">(courant)</span>' : '' !!}</a>
+                        Cupcakes {!! Request::is('products') ? '<span class="sr-only">(courant)</span>' : '' !!}</a>
                 </li>
                 <li class="nav-item {{ Request::is('about') ? 'active' : '' }}"><a class='nav-link' href="{{ url('about') }}">
-                        A propos {!! Request::is('/about') ? '<span class="sr-only">(courant)</span>' : '' !!}</a>
+                        A propos {!! Request::is('about') ? '<span class="sr-only">(courant)</span>' : '' !!}</a>
                 </li>
                 <li class="nav-item {{ Request::is('contacts') ? 'active' : '' }}"><a class='nav-link' href="{{ url('contacts') }}">
-                        Contacts {!! Request::is('/contacts') ? '<span class="sr-only">(courant)</span>' : '' !!}</a>
+                        Contacts {!! Request::is('contacts') ? '<span class="sr-only">(courant)</span>' : '' !!}</a>
                 </li>
             </ul>
             <i class="bi bi-cart mr-2 p-1 border text-white" title="Panier"></i>

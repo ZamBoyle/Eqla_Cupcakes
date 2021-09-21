@@ -7,7 +7,7 @@
         <div class="jumbotron bg-dark text-white text-justify mt-2">
             <h2>Crazy Cupcakes</h2>
             <p>Fiers de notre savoir faire, venez découvrir nos <span class="font-italic">Crazy Cupcakes</span> faits avec Amour et Passion depuis déjà 20 ans.
-                C'est une histoire familiale que vous pourrez <a href="about.php">découvrir</a>.
+                C'est une histoire familiale que vous pourrez <a href="{{ url('about') }}">découvrir</a>.
             </p>
         </div>
     </div>

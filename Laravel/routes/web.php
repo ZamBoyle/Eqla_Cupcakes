@@ -23,4 +23,4 @@ Route::view('contacts','contacts');
 
 Route::post('search', function () {
     return view('search');
-});
+}); 

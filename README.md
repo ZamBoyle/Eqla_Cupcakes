@@ -1,1 +1,1 @@
-# Site Cupcake en Laravel et en PHP.
+# Site Cupcakes en Laravel et en PHP.

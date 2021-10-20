@@ -1,1 +1,1 @@
-# Notre site cupcake en Laravel
+# Notre site Cupcakes en Laravel

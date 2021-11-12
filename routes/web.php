@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CupcakeController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ Route::get('products/{id}',[CupcakeController::class, 'show']);
 
 Route::view('about', 'about');
 
-Route::view('contacts','contacts');
+Route::get('contacts', [ContactController::class, 'create']);
+Route::post('contacts', [ContactController::class, 'store']);
 
 Route::post('search', [CupcakeController::class,'search']);

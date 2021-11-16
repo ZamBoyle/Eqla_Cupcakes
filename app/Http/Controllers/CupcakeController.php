@@ -17,6 +17,11 @@ class CupcakeController extends Controller
         return view('products.list')->with('cupcakes', Cupcake::all());
     }
 
+    public function home()
+    {
+        return view('home')->with('cupcakes', Cupcake::all()->take(3));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -46,7 +51,7 @@ class CupcakeController extends Controller
      */
     public function show($id)
     {
-        return view('products.show',['cupcake'=>Cupcake::findOrFail($id)]);
+        return view('products.show', ['cupcake' => Cupcake::findOrFail($id)]);
     }
 
     /**
@@ -72,10 +77,11 @@ class CupcakeController extends Controller
         //
     }
 
-    public function search(Request $request){
-        $what =$request->get('what');
-        $result = Cupcake::where('name','like',"%$what%")->orWhere('description','like',"%$what%")->get();
-        return view('search')->with('result',$result);
+    public function search(Request $request)
+    {
+        $what = $request->get('what');
+        $result = Cupcake::where('name', 'like', "%$what%")->orWhere('description', 'like', "%$what%")->get();
+        return view('search')->with('result', $result);
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CupcakeController;
 use App\Http\Controllers\ContactController;
@@ -15,13 +16,14 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::view('/', 'home');
-Route::get('products',[CupcakeController::class, 'index']);
-Route::get('products/{id}',[CupcakeController::class, 'show']);
+Route::get('/', [CupcakeController::class, 'home']);
+Route::get('products', [CupcakeController::class, 'index']);
+Route::get('products/{id}', [CupcakeController::class, 'show']);
 
 Route::view('about', 'about');
 
 Route::get('contacts', [ContactController::class, 'create']);
 Route::post('contacts', [ContactController::class, 'store']);
 
-Route::post('search', [CupcakeController::class,'search']);
+Route::post('search', [CupcakeController::class, 'search']);
+Route::get('initialize', [AdminController::class, 'initialize']);

@@ -13,7 +13,7 @@ class AdminController extends Controller
 {
     public function initialize()
     {
-        $filename = base_path() . "\database\database.sqlite";
+        $filename = base_path() . "/database/database.sqlite";
         $tasks = ['database' => 'Création du fichier database\database.sqlite', 'migration' => 'php artisan migrate:fresh'];
         $tasksFailed = [];
         $tasksDone = [];

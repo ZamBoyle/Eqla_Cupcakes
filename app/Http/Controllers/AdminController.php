@@ -13,8 +13,8 @@ class AdminController extends Controller
 {
     public function initialize()
     {
-        $filename = base_path() . "/database/database.sqlite";
-        $tasks = ['database' => 'Création du fichier database\database.sqlite', 'migration' => 'php artisan migrate:fresh'];
+        $filename = join(DIRECTORY_SEPARATOR, array(base_path(), 'database', 'database.sqlite'));
+        $tasks = ['database' => 'Création du fichier database/database.sqlite', 'migration' => 'php artisan migrate:fresh'];
         $tasksFailed = [];
         $tasksDone = [];
         $tasksDoneBefore =  [];
@@ -37,16 +37,7 @@ class AdminController extends Controller
         return view('admin.initialize', ['tasks' => $tasks, 'tasksDone' => $tasksDone,  'tasksFailed' => $tasksFailed, 'tasksDoneBefore'=> $tasksDoneBefore, 'files' => File::allFiles(base_path() . "\database\migrations"), 'artisanOutput' => $artisanOutput]);
     }
 
-    /**
-     *
-     * Description for function
-     *
-     * @param    array  $tasksDone Description
-     * @param    array  $tasksFailed Description
-     *
-     * @return      string
-     *
-     */
+
     public function artisanCall(array &$tasksDone, array &$tasksFailed)
     {
         $migrateResult = Artisan::call('migrate:fresh');
